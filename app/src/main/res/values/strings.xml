@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">SGA</string>
+    <string name="base_url">http://www.sga.somee.com/api/</string>
+
+</resources>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:paddingTop="10dp"
+
+    >
+
+    <LinearLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:orientation="horizontal"
+        android:background="@color/main"
+        android:id="@+id/bar"
+
+        >
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Currency Converter"
+            android:textSize="23dp"
+            android:paddingTop="8dp"
+            android:paddingLeft="22dp"
+            android:textStyle="bold"
+            android:textColor="@color/background"
+            android:layout_centerHorizontal="true" />
+
+        <ImageView
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="100dp"
+            android:layout_width="38dp"
+            android:layout_height="46dp"
+            android:src="@drawable/options"
+            android:layout_toRightOf="@id/ed"
+            android:layout_below="@id/bar" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/ed"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="20dp"
+            android:layout_width="250dp"
+            android:layout_height="60dp"
+            android:hint="Amount"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            android:layout_below="@id/bar" />
+
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/money2"
+            android:layout_toRightOf="@id/ed"
+            android:layout_below="@id/bar" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/ecuro"
+            android:layout_toRightOf="@id/ed" />
+
+        <RadioButton
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:text="Euro"
+            android:textStyle="bold"
+            android:textSize="22dp"
+
+
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/pounds"
+            android:layout_toRightOf="@id/ed" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/euro2"
+            android:layout_toRightOf="@id/ed" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="25dp"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@drawable/dollor"
+            android:layout_toRightOf="@id/ed" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="195dp"
+            android:layout_height="50dp"
+            android:textSize="23dp"
+            android:textStyle="bold"
+            android:textColor="@color/seablue"
+            android:layout_marginLeft="85dp"
+            android:textAlignment="center"
+            android:text="Converted Amount" />
+    </LinearLayout>
+</LinearLayout>

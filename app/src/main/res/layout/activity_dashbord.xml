@@ -1,0 +1,380 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Dashbord">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+
+                >
+
+                <RelativeLayout
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:layout_weight="0.65"
+                    android:background="@color/sky">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+
+                        >
+
+
+                        <ImageView
+                            android:id="@+id/new2"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:padding="6dp"
+                            android:src="@drawable/search"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            tools:ignore="DuplicateIds" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Promotions"
+                            android:textSize="18dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@id/new2"
+
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:layout_weight="0.55"
+                    android:background="@color/dsky">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+
+                        >
+
+
+                        <ImageView
+                            android:id="@+id/new1"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:padding="6dp"
+                            android:src="@drawable/chk"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Checklist"
+                            android:textSize="18dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@id/new1"
+
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:layout_weight="0.41"
+                    android:background="@color/grey">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+
+                        >
+
+
+                        <ImageView
+                            android:id="@+id/new3"
+                            android:layout_width="110dp"
+                            android:layout_height="80dp"
+                            android:layout_centerHorizontal="true"
+                            android:padding="6dp"
+                            android:src="@drawable/locationsearch"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            tools:ignore="DuplicateIds" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Search"
+                            android:textSize="18dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@id/new3"
+
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:clickable="true"
+                    android:layout_weight="0.55"
+                    android:background="@color/sky">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+
+                        >
+
+
+                        <ImageView
+                            android:id="@+id/new4"
+                            android:layout_width="70dp"
+                            android:layout_height="65dp"
+                            android:layout_centerHorizontal="true"
+                            android:padding="6dp"
+                            android:src="@drawable/event"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Events"
+                            android:textSize="18dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@id/new4"
+
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:clickable="true"
+                    android:layout_weight="0.65"
+                    android:background="@color/sky">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+
+                        >
+
+
+                        <ImageView
+                            android:id="@+id/new5"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:padding="6dp"
+                            android:src="@drawable/utility"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            tools:ignore="DuplicateIds" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Utilities"
+                            android:textSize="18dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@id/new5"
+
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:clickable="true"
+                    android:layout_weight="0.55"
+                    android:background="@color/dsky">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+
+                        >
+
+
+                        <ImageView
+                            android:id="@+id/new6"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:padding="6dp"
+                            android:src="@drawable/food"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Foodcourt"
+                            android:textSize="18dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@id/new6"
+
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginTop="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:clickable="true"
+                    android:layout_weight="0.41"
+                    android:background="@color/grey">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+
+                        >
+
+
+                        <ImageView
+                            android:id="@+id/new7"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:padding="6dp"
+                            android:src="@drawable/aboutmall"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside"
+                            tools:ignore="DuplicateIds" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="About"
+                            android:textSize="18dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@id/new7"
+
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:clickable="true"
+                    android:layout_weight="0.55"
+                    android:background="@color/sky">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+
+                        >
+
+
+                        <ImageView
+                            android:id="@+id/new8"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:layout_centerHorizontal="true"
+                            android:padding="6dp"
+                            android:src="@drawable/map"
+                            android:adjustViewBounds="true"
+                            android:scaleType="centerInside" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Maps"
+                            android:textSize="18dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@id/new8"
+
+                            />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>
