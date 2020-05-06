@@ -27,6 +27,10 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.6.1'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-    implementation 'com.loopj.android:android-async-http:1.4.9'
+    // retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.1.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.1.0'
+    //added bcz sending raw json data to request
+    implementation'com.squareup.retrofit2:converter-scalars:2.6.2'
 }
 
