@@ -39,8 +39,11 @@ public class MainActivity2 extends AppCompatActivity {
     //Declarations
     private Button btn, btn1;
     private static final String TAG = MainActivity2.class.getName();
-    private Retrofit retrofit = new Retrofit.Builder().baseUrl("https://sga.somee.com/api/")
-        .addConverterFactory(ScalarsConverterFactory.create()).addConverterFactory(GsonConverterFactory.create()).build();
+    private Retrofit retrofit = new Retrofit.Builder()
+            .baseUrl("https://sga.somee.com/api/")
+            .addConverterFactory(ScalarsConverterFactory.create())
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
     private ShopApi _shopsApi;
     //constructor
     public MainActivity2(){
@@ -134,17 +137,45 @@ public class MainActivity2 extends AppCompatActivity {
                 .load(R.raw.loc3)
                 .apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE))
                 .into(new DrawableImageViewTarget(imageView12));
+
+
         //Getting API
         //GetShops();
 
-        //Post Api
-        Shop _shop = new Shop();
-        _shop.shop_name = "Starbucks";
-        _shop.shop_owner = "Unknown";
-        _shop.shop_longitude = 49545.3455;
-        _shop.shop_latitude = 55353.554;
-        _shop.shop_image = "path/path.png";
-        PostShop(_shop);
+        //Post Api For adding new Shop
+        /*try{
+            JSONObject obj = new JSONObject();
+            obj.put("ShopName","StarBuck Added");
+            obj.put("OwnerName","StarBuck Shop");
+            obj.put("Longitude","0.0000");
+            obj.put("Latitude","0.0000");
+            obj.put("Imagepath","path");
+            Log.d(TAG, obj.toString());
+            PostShop(obj.toString());
+        }
+        catch (Exception ex){
+
+        }*/
+
+
+        //Update Api For updating shops with respective ids
+        /*try{
+            JSONObject obj = new JSONObject();
+            obj.put("ShopId",9);
+            obj.put("ShopName","StarBuck");
+            obj.put("OwnerName","StarBuck");
+            obj.put("Longitude","0.0000");
+            obj.put("Latitude","0.0000");
+            obj.put("Imagepath","path");
+            Log.d(TAG, obj.toString());
+            UpdateShop(obj.toString());
+        }
+        catch (Exception ex){
+
+        }*/
+
+        //Delete Api
+        //RemoveShop(10);
     }
     public void GetShops(){
             Call<List<Shop>> _shops = _shopsApi.GetAllShops(1);
@@ -163,26 +194,64 @@ public class MainActivity2 extends AppCompatActivity {
                 }
             });
     }
-    public void PostShop(Shop shop){
-        /*
-        JsonObject obj = new JsonObject();
-        obj.addProperty("shop_name",shop.shop_name);
-        obj.addProperty("shop_owner",shop.shop_owner);
-        obj.addProperty("shop_longitude",shop.shop_longitude);
-        obj.addProperty("shop_latitude",shop.shop_latitude);
-        obj.addProperty("shop_image",shop.shop_image);
-        Log.d(TAG, obj.toString());
-         */
+    public void PostShop(String shop){
+
         Call<ResponseBody> AddShop = _shopsApi.AddShop(shop);
+
         AddShop.enqueue(new Callback<ResponseBody>() {
+
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                Toast.makeText(MainActivity2.this,response.raw().body().toString(),Toast.LENGTH_LONG).show();
+            try{
+                String StatusCode = response.body().string();
+                if( StatusCode.equals("201")) {
+                    Toast.makeText(MainActivity2.this, "Shop Created", Toast.LENGTH_LONG).show();
+                }else{
+                    Toast.makeText(MainActivity2.this, "Shop Not Created", Toast.LENGTH_LONG).show();
+                }
+            }catch (Exception ex){}
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 Toast.makeText(MainActivity2.this,"Failded to add new shop",Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+    public void UpdateShop(String shop){
+
+        Call<ResponseBody> UpdateShop = _shopsApi.UpdateShop(shop);
+        UpdateShop.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                try{
+                    String StatusCode = response.body().string();
+                    if( StatusCode.equals("200")) {
+                        Toast.makeText(MainActivity2.this, "Shop Updated", Toast.LENGTH_LONG).show();
+                    }else{
+                        Toast.makeText(MainActivity2.this, "Shop Not Updated", Toast.LENGTH_LONG).show();
+                    }
+                }catch (Exception ex){}
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(MainActivity2.this,"Failed to Update shop",Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+    public void RemoveShop(int id){
+        Call<ResponseBody> DeleteShop =  _shopsApi.RemoveShop(id);
+        DeleteShop.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                Toast.makeText(MainActivity2.this, response.raw().toString(),Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(MainActivity2.this, "Error",Toast.LENGTH_LONG).show();
             }
         });
     }

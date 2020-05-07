@@ -16,6 +16,16 @@ public class Shop {
     @SerializedName("shop_image")
     public String shop_image;
 
+    public Shop(int shop_id, String shop_name, String shop_owner, double shop_longitude, double shop_latitude, String shop_image) {
+    }
+    //for post
+    public Shop(String shop_name, String shop_owner, double shop_longitude, double shop_latitude, String shop_image) {
+    }
+
+    public Shop() {
+
+    }
+
     // Getters
     public int GetShopId(){
         return shop_id;
