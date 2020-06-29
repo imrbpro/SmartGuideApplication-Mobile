@@ -2,10 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.madee.sga">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION " />
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,17 +9,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Admin.Shop.UpdateShop"></activity>
+        <activity android:name=".Admin.Shop.Shop" />
+        <activity
+            android:name=".Admin.Admin_Dashboard"
+            android:label="@string/title_activity_admin__dashboard"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Admin.Brand.AddNewBrand" />
+        <activity android:name=".Admin.Shop.AddNew" />
         <activity android:name=".Dashbord" />
         <activity android:name=".MainActivity3" />
         <activity android:name=".currencyconverter" />
-        <activity android:name=".MainActivity2">
+        <activity android:name=".MainActivity2" />
+        <activity android:name=".Admin.AdminDashboard">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION " />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

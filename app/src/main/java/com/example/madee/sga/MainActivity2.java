@@ -1,7 +1,7 @@
 package com.example.madee.sga;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -13,17 +13,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 import com.bumptech.glide.request.target.DrawableImageViewTarget;
 import com.example.madee.sga.API.ShopApi;
-import com.example.madee.sga.Models.Shop;
-import com.google.gson.JsonObject;
 
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.List;
-
-import okhttp3.RequestBody;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -31,8 +21,6 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 import retrofit2.converter.scalars.ScalarsConverterFactory;
-import retrofit2.http.Body;
-import retrofit2.http.GET;
 
 
 public class MainActivity2 extends AppCompatActivity {
@@ -55,19 +43,19 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        final ImageView imageView = (ImageView) findViewById(R.id.J);
-        final ImageView imageView1 = (ImageView) findViewById(R.id.j1);
-        final ImageView imageView2 = (ImageView) findViewById(R.id.j2);
-        final ImageView imageView3 = (ImageView) findViewById(R.id.j3);
-        final ImageView imageView4 = (ImageView) findViewById(R.id.j4);
-        final ImageView imageView5 = (ImageView) findViewById(R.id.j5);
-        final ImageView imageView6 = (ImageView) findViewById(R.id.j6);
-        final ImageView imageView7 = (ImageView) findViewById(R.id.j7);
-        final ImageView imageView8 = (ImageView) findViewById(R.id.j8);
-        final ImageView imageView9 = (ImageView) findViewById(R.id.j9);
-        final ImageView imageView10 = (ImageView) findViewById(R.id.j10);
-        final ImageView imageView11 = (ImageView) findViewById(R.id.j11);
-        final ImageView imageView12 = (ImageView) findViewById(R.id.j12);
+        final ImageView imageView = findViewById(R.id.J);
+        final ImageView imageView1 = findViewById(R.id.j1);
+        final ImageView imageView2 = findViewById(R.id.j2);
+        final ImageView imageView3 = findViewById(R.id.j3);
+        final ImageView imageView4 = findViewById(R.id.j4);
+        final ImageView imageView5 = findViewById(R.id.j5);
+        final ImageView imageView6 = findViewById(R.id.j6);
+        final ImageView imageView7 = findViewById(R.id.j7);
+        final ImageView imageView8 = findViewById(R.id.j8);
+        final ImageView imageView9 = findViewById(R.id.j9);
+        final ImageView imageView10 = findViewById(R.id.j10);
+        final ImageView imageView11 = findViewById(R.id.j11);
+        final ImageView imageView12 = findViewById(R.id.j12);
 
         imageView.setVisibility(View.INVISIBLE);
 
@@ -75,7 +63,7 @@ public class MainActivity2 extends AppCompatActivity {
         //Location loc;
         //GetGpsLocation gpsLocation = new GetGpsLocation(this);
         //loc = gpsLocation.getLoc();
-        //loc.getLatitude();///waghera waghera
+        //loc.getLatitude();
 
         Glide.with(this)
                 .load(R.raw.loc3)
@@ -138,7 +126,9 @@ public class MainActivity2 extends AppCompatActivity {
                 .apply(new RequestOptions().diskCacheStrategy(DiskCacheStrategy.NONE))
                 .into(new DrawableImageViewTarget(imageView12));
 
-
+        /*
+        API WORK
+        */
         //Getting API
         //GetShops();
 
@@ -176,23 +166,24 @@ public class MainActivity2 extends AppCompatActivity {
 
         //Delete Api
         //RemoveShop(10);
+
+
     }
-    public void GetShops(){
-            Call<List<Shop>> _shops = _shopsApi.GetAllShops(1);
+    public void GetShops() {
+        String JData = "";
+        Call<ResponseBody> _shops = _shopsApi.GetAllShops(1);
+        _shops.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                Log.d(TAG, "onResponse: " + response.body());
+            }
 
-            _shops.enqueue(new Callback<List<Shop>>() {
-                @Override
-                public void onResponse(Call<List<Shop>> call, Response<List<Shop>> response) {
-                    Log.d(TAG, "onResponse: ");
-                    Toast.makeText(MainActivity2.this,"Response"+response.body(),Toast.LENGTH_LONG).show();
-                }
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
 
-                @Override
-                public void onFailure(Call<List<Shop>> call, Throwable t) {
+            }
+        });
 
-                    Toast.makeText(MainActivity2.this,"Fail",Toast.LENGTH_LONG).show();
-                }
-            });
     }
     public void PostShop(String shop){
 
