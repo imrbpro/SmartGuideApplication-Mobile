@@ -18,6 +18,7 @@
 
 
     </RelativeLayout>
+
     <android.support.v7.widget.AppCompatButton
         android:id="@+id/created_dialog_btn"
         android:layout_width="wrap_content"
@@ -29,7 +30,6 @@
         android:text="Ok"
         android:textColor="@color/background"
         android:textSize="18dp"></android.support.v7.widget.AppCompatButton>
-
 
     <android.support.v7.widget.AppCompatTextView
         android:id="@+id/created_dialog_body"
@@ -47,6 +47,5 @@
         android:text="Congratulations"
         android:textSize="24dp"
         android:textStyle="bold"></android.support.v7.widget.AppCompatTextView>
-
 
 </LinearLayout>
