@@ -16,19 +16,15 @@
             android:layout_centerInParent="true"
             android:background="@drawable/success_png"></android.support.v7.widget.AppCompatImageView>
 
-
     </RelativeLayout>
-    <android.support.v7.widget.AppCompatButton
-        android:id="@+id/created_dialog_btn"
+    <android.support.v7.widget.AppCompatTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="15dp"
-        android:layout_marginTop="15dp"
-        android:background="@android:color/holo_green_light"
-        android:text="Ok"
-        android:textColor="@color/background"
-        android:textSize="18dp"></android.support.v7.widget.AppCompatButton>
+        android:layout_marginTop="10dp"
+        android:text="Congratulations"
+        android:textSize="24dp"
+        android:textStyle="bold"></android.support.v7.widget.AppCompatTextView>
 
 
     <android.support.v7.widget.AppCompatTextView
@@ -40,14 +36,17 @@
         android:textSize="18dp"></android.support.v7.widget.AppCompatTextView>
 
 
-    <android.support.v7.widget.AppCompatTextView
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/created_dialog_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="10dp"
-        android:text="Congratulations"
-        android:textSize="24dp"
-        android:textStyle="bold"></android.support.v7.widget.AppCompatTextView>
-
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/holo_green_light"
+        android:text="Ok"
+        android:textColor="@color/background"
+        android:textSize="18dp"></android.support.v7.widget.AppCompatButton>
 
 </LinearLayout>
