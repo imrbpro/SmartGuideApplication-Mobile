@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="@drawable/errro">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerInParent="true"
+            android:background="@drawable/error_png"></android.support.v7.widget.AppCompatImageView>
+
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/failed_dialog_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:background="@android:color/holo_green_light"
+        android:text="Ok"
+        android:textColor="@color/background"
+        android:textSize="18dp"></android.support.v7.widget.AppCompatButton>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/failed_dialog_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="25dp"
+        android:textSize="18dp"></android.support.v7.widget.AppCompatTextView>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="10dp"
+        android:text="Ops, Error"
+        android:textSize="24dp"
+        android:textStyle="bold"></android.support.v7.widget.AppCompatTextView>
+
+</LinearLayout>

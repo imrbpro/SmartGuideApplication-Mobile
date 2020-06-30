@@ -10,7 +10,7 @@ import com.example.madee.sga.Admin.Shop.Shop;
 import com.example.madee.sga.R;
 
 public class AdminDashboard extends AppCompatActivity {
-    public Button btnShop, btnBrand, btnProduct, btnPromotion, btnEvent;
+    public Button btnShop, btnBrand, btnProduct, btnPromotion, btnEvent, dbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class AdminDashboard extends AppCompatActivity {
                 startActivity(GotoShop);
             }
         });
+
     }
 
 

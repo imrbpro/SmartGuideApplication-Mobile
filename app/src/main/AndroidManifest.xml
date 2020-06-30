@@ -11,10 +11,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".Admin.Shop.UpdateShop"></activity>
         <activity android:name=".Admin.Shop.Shop" />
-        <activity
-            android:name=".Admin.Admin_Dashboard"
-            android:label="@string/title_activity_admin__dashboard"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Admin.Brand.AddNewBrand" />
         <activity android:name=".Admin.Shop.AddNew" />
         <activity android:name=".Dashbord" />
