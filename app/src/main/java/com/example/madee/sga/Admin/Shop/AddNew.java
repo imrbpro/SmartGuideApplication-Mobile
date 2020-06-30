@@ -1,5 +1,6 @@
 package com.example.madee.sga.Admin.Shop;
 
+import android.app.Dialog;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -7,8 +8,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.madee.sga.API.ShopApi;
@@ -33,8 +36,10 @@ public class AddNew extends AppCompatActivity {
             .build();
     private ShopApi _shopsApi;
     private String TAG = "Add New";
+    private Dialog SuccessDialog, FailedDialog, LoaderDialog;
+    private TextView txt, txtfailed;
     private EditText txtShopName, txtOwnerName, txtLatitude, txtLongitude, txtImagePath;
-    private Button btnAddShop;
+    private Button btnAddShop, dbtn, dbtn1;
 
     public AddNew() {
         _shopsApi = retrofit.create(ShopApi.class);
@@ -67,6 +72,7 @@ public class AddNew extends AppCompatActivity {
                     obj.put("Latitude", txtLongitude.getText());
                     obj.put("Imagepath", txtImagePath.getText());
                     Log.d(TAG, obj.toString());
+                    Loader(0);
                     AddNewShop(obj.toString());
                 } catch (Exception ex) {
                     ex.printStackTrace();
@@ -92,11 +98,14 @@ public class AddNew extends AppCompatActivity {
                 try {
                     String StatusCode = response.body().string();
                     if (StatusCode.equals("201")) {
-                        Toast.makeText(AddNew.this, "Shop Created", Toast.LENGTH_LONG).show();
+                        Loader(1);
+                        ShowSuccessDialog();
                     } else {
-                        Toast.makeText(AddNew.this, "Shop Not Created", Toast.LENGTH_LONG).show();
+                        Loader(1);
+                        ShowErrorDialog();
                     }
                 } catch (Exception ex) {
+                    Loader(1);
                     ex.printStackTrace();
                 }
             }
@@ -106,5 +115,53 @@ public class AddNew extends AppCompatActivity {
                 Toast.makeText(AddNew.this, "Failed to add new shop", Toast.LENGTH_LONG).show();
             }
         });
+    }
+
+    public void ShowSuccessDialog() {
+        SuccessDialog = new Dialog(AddNew.this);
+        SuccessDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        SuccessDialog.setContentView(R.layout.dialog_created);
+        SuccessDialog.setTitle("Shop Title");
+        txt = SuccessDialog.findViewById(R.id.created_dialog_body);
+        txt.setText("Shop Created Successfully");
+        dbtn = SuccessDialog.findViewById(R.id.created_dialog_btn);
+        dbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                SuccessDialog.dismiss();
+            }
+        });
+        SuccessDialog.show();
+    }
+
+    public void ShowErrorDialog() {
+        FailedDialog = new Dialog(AddNew.this);
+        FailedDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        FailedDialog.setContentView(R.layout.dialog_failed);
+        txtfailed = FailedDialog.findViewById(R.id.failed_dialog_body);
+        txtfailed.setText("Shop Not Created");
+        dbtn1 = findViewById(R.id.failed_dialog_btn);
+        dbtn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FailedDialog.dismiss();
+            }
+        });
+    }
+
+    public void Loader(int flag) {
+        switch (flag) {
+            case 0:
+                LoaderDialog = new Dialog(AddNew.this);
+                LoaderDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                LoaderDialog.setContentView(R.layout.wait_loader);
+                LoaderDialog.show();
+                break;
+            case 1:
+                LoaderDialog.dismiss();
+                break;
+            default:
+                LoaderDialog.dismiss();
+        }
     }
 }

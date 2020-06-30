@@ -67,7 +67,8 @@ public class ShopDataAdapter extends RecyclerView.Adapter<ShopDataAdapter.ShopVi
         shopViewHolder.btnUpdate.setId(shop.shop_id);
         url = shop.shop_image;
         RequestOptions options = new RequestOptions()
-                .centerCrop()
+                .circleCrop()
+                .centerInside()
                 .placeholder(R.mipmap.ic_launcher_round)
                 .error(R.mipmap.ic_launcher_round);
         Glide.with(shopViewHolder.img.getContext())

@@ -9,12 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Admin.Shop.UpdateShop"></activity>
+        <activity android:name=".Admin.Brand.Brand"></activity>
+        <activity android:name=".Admin.Shop.UpdateShop" />
         <activity android:name=".Admin.Shop.Shop" />
-        <activity
-            android:name=".Admin.Admin_Dashboard"
-            android:label="@string/title_activity_admin__dashboard"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".Admin.Brand.AddNewBrand" />
         <activity android:name=".Admin.Shop.AddNew" />
         <activity android:name=".Dashbord" />
@@ -30,10 +27,10 @@
         </activity>
     </application>
 
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION " />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION " />
 
 </manifest>
