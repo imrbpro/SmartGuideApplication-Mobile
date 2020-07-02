@@ -1,6 +1,5 @@
 package com.example.madee.sga.Admin.Shop;
 
-import android.app.Dialog;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
@@ -8,13 +7,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.madee.sga.API.ShopApi;
+import com.example.madee.sga.Dialogs;
 import com.example.madee.sga.R;
 
 import org.json.JSONObject;
@@ -35,11 +33,10 @@ public class AddNew extends AppCompatActivity {
             .addConverterFactory(GsonConverterFactory.create())
             .build();
     private ShopApi _shopsApi;
-    private String TAG = "Add New";
-    private Dialog SuccessDialog, FailedDialog, LoaderDialog;
-    private TextView txt, txtfailed;
+    Dialogs dialogs = new Dialogs();
     private EditText txtShopName, txtOwnerName, txtLatitude, txtLongitude, txtImagePath;
-    private Button btnAddShop, dbtn, dbtn1;
+    private String TAG = "Add New", Error = "Error : Shop Not Created", Success = "Shop Created Successfully";
+    private Button btnAddShop;
 
     public AddNew() {
         _shopsApi = retrofit.create(ShopApi.class);
@@ -72,7 +69,7 @@ public class AddNew extends AppCompatActivity {
                     obj.put("Latitude", txtLongitude.getText());
                     obj.put("Imagepath", txtImagePath.getText());
                     Log.d(TAG, obj.toString());
-                    Loader(0);
+                    dialogs.Loader(AddNew.this, 0);
                     AddNewShop(obj.toString());
                 } catch (Exception ex) {
                     ex.printStackTrace();
@@ -98,14 +95,15 @@ public class AddNew extends AppCompatActivity {
                 try {
                     String StatusCode = response.body().string();
                     if (StatusCode.equals("201")) {
-                        Loader(1);
-                        ShowSuccessDialog();
+                        dialogs.Loader(AddNew.this, 1);
+                        dialogs.ShowSuccessDialog(Success, AddNew.this);
                     } else {
-                        Loader(1);
-                        ShowErrorDialog();
+                        dialogs.Loader(AddNew.this, 1);
+                        dialogs.ShowErrorDialog(Error, AddNew.this);
                     }
                 } catch (Exception ex) {
-                    Loader(1);
+                    dialogs.Loader(AddNew.this, 1);
+                    dialogs.ShowErrorDialog(Error, AddNew.this);
                     ex.printStackTrace();
                 }
             }
@@ -113,55 +111,10 @@ public class AddNew extends AppCompatActivity {
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 Toast.makeText(AddNew.this, "Failed to add new shop", Toast.LENGTH_LONG).show();
+                dialogs.Loader(AddNew.this, 1);
+                dialogs.ShowErrorDialog(Error, AddNew.this);
             }
         });
     }
 
-    public void ShowSuccessDialog() {
-        SuccessDialog = new Dialog(AddNew.this);
-        SuccessDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        SuccessDialog.setContentView(R.layout.dialog_created);
-        SuccessDialog.setTitle("Shop Title");
-        txt = SuccessDialog.findViewById(R.id.created_dialog_body);
-        txt.setText("Shop Created Successfully");
-        dbtn = SuccessDialog.findViewById(R.id.created_dialog_btn);
-        dbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SuccessDialog.dismiss();
-            }
-        });
-        SuccessDialog.show();
-    }
-
-    public void ShowErrorDialog() {
-        FailedDialog = new Dialog(AddNew.this);
-        FailedDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        FailedDialog.setContentView(R.layout.dialog_failed);
-        txtfailed = FailedDialog.findViewById(R.id.failed_dialog_body);
-        txtfailed.setText("Shop Not Created");
-        dbtn1 = findViewById(R.id.failed_dialog_btn);
-        dbtn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FailedDialog.dismiss();
-            }
-        });
-    }
-
-    public void Loader(int flag) {
-        switch (flag) {
-            case 0:
-                LoaderDialog = new Dialog(AddNew.this);
-                LoaderDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                LoaderDialog.setContentView(R.layout.wait_loader);
-                LoaderDialog.show();
-                break;
-            case 1:
-                LoaderDialog.dismiss();
-                break;
-            default:
-                LoaderDialog.dismiss();
-        }
-    }
 }

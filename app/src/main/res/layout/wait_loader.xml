@@ -2,30 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:background="#00000000"
-    android:orientation="vertical"
-    android:theme="@android:style/Theme.NoDisplay">
+    android:background="#00175A5A"
+    android:clickable="false"
+    android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:background="#00000000">
-
-        <pl.droidsonroids.gif.GifImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:background="@drawable/loading"></pl.droidsonroids.gif.GifImageView>
-
-
-    </RelativeLayout>
-    <!--
-    <android.support.v7.widget.AppCompatTextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="44dp"
-        android:textStyle="bold"
-        android:layout_gravity="center_horizontal"
-        android:text="Please Wait"
-        android:textColor="#8c4589"></android.support.v7.widget.AppCompatTextView>-->
+    <pl.droidsonroids.gif.GifImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:background="#00FFFFFF"
+        android:src="@drawable/loading"></pl.droidsonroids.gif.GifImageView>
 </LinearLayout>

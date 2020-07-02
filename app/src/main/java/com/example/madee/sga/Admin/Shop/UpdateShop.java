@@ -1,19 +1,17 @@
 package com.example.madee.sga.Admin.Shop;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.madee.sga.API.ShopApi;
+import com.example.madee.sga.Dialogs;
 import com.example.madee.sga.R;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -34,11 +32,10 @@ public class UpdateShop extends AppCompatActivity {
 
     private static final String TAG = UpdateShop.class.getName();
     int ShopId = 0;
-    String JData = "";
-    private Dialog SuccessDialog, FailedDialog, LoaderDialog;
-    private TextView txt, txtfailed;
+    String JData = "", Error = "Error : Shop Not Updated", Success = "Shop Updated Successfully";
+    Dialogs dialogs = new Dialogs();
     private EditText txtShopName, txtShopOwner, txtShopLatitude, txtShopLongitude, txtShopImagePath;
-    private Button btnUpdate, dbtn, dbtn1;
+    private Button btnUpdate;
     private Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("https://sga.somee.com/api/")
             .addConverterFactory(ScalarsConverterFactory.create())
@@ -87,7 +84,7 @@ public class UpdateShop extends AppCompatActivity {
                 }
             }
         });
-        Loader(0);
+        dialogs.Loader(UpdateShop.this, 0);
         GetShopDataById(ShopId);
     }
 
@@ -116,17 +113,18 @@ public class UpdateShop extends AppCompatActivity {
                     GsonBuilder gsonBuilder = new GsonBuilder();
                     Gson gson = gsonBuilder.create();
                     com.example.madee.sga.Models.Shop[] shopjson = gson.fromJson(JData, com.example.madee.sga.Models.Shop[].class);
-                    Loader(1);
+                    dialogs.Loader(UpdateShop.this, 1);
                     UpdateView(shopjson[0].shop_name, shopjson[0].shop_owner, shopjson[0].shop_latitude, shopjson[0].shop_longitude, shopjson[0].shop_image);
                 } catch (IOException e) {
-                    Loader(1);
+                    dialogs.Loader(UpdateShop.this, 1);
                     e.printStackTrace();
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-
+                dialogs.Loader(UpdateShop.this, 1);
+                dialogs.ShowErrorDialog(Error, UpdateShop.this);
             }
         });
     }
@@ -140,14 +138,15 @@ public class UpdateShop extends AppCompatActivity {
                 try {
                     String StatusCode = response.body().string();
                     if (StatusCode.equals("200")) {
-                        Loader(1);
-                        ShowSuccessDialog();
+                        dialogs.Loader(UpdateShop.this, 1);
+                        dialogs.ShowSuccessDialog(Success, UpdateShop.this);
                     } else {
-                        Loader(1);
-                        ShowErrorDialog();
+                        dialogs.Loader(UpdateShop.this, 1);
+                        dialogs.ShowErrorDialog(Error, UpdateShop.this);
                     }
                 } catch (Exception ex) {
-                    Loader(1);
+                    dialogs.Loader(UpdateShop.this, 1);
+                    dialogs.ShowErrorDialog(Error, UpdateShop.this);
                 }
 
             }
@@ -155,55 +154,9 @@ public class UpdateShop extends AppCompatActivity {
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
                 Toast.makeText(UpdateShop.this, "Failed to Update shop", Toast.LENGTH_LONG).show();
+                dialogs.Loader(UpdateShop.this, 1);
+                dialogs.ShowErrorDialog(Error, UpdateShop.this);
             }
         });
-    }
-
-    public void ShowSuccessDialog() {
-        SuccessDialog = new Dialog(UpdateShop.this);
-        SuccessDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        SuccessDialog.setContentView(R.layout.dialog_created);
-        SuccessDialog.setTitle("Shop Title");
-        txt = SuccessDialog.findViewById(R.id.created_dialog_body);
-        txt.setText("Shop Updated Successfully");
-        dbtn = SuccessDialog.findViewById(R.id.created_dialog_btn);
-        dbtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                SuccessDialog.dismiss();
-            }
-        });
-        SuccessDialog.show();
-    }
-
-    public void ShowErrorDialog() {
-        FailedDialog = new Dialog(UpdateShop.this);
-        FailedDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        FailedDialog.setContentView(R.layout.dialog_failed);
-        txtfailed = FailedDialog.findViewById(R.id.failed_dialog_body);
-        txtfailed.setText("Shop Not Updated");
-        dbtn1 = findViewById(R.id.failed_dialog_btn);
-        dbtn1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FailedDialog.dismiss();
-            }
-        });
-    }
-
-    public void Loader(int flag) {
-        switch (flag) {
-            case 0:
-                LoaderDialog = new Dialog(UpdateShop.this);
-                LoaderDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                LoaderDialog.setContentView(R.layout.wait_loader);
-                LoaderDialog.show();
-                break;
-            case 1:
-                LoaderDialog.dismiss();
-                break;
-            default:
-                LoaderDialog.dismiss();
-        }
     }
 }

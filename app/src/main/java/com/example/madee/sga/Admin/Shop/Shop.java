@@ -1,6 +1,5 @@
 package com.example.madee.sga.Admin.Shop;
 
-import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,11 +7,11 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Window;
 import android.widget.Button;
 
 import com.example.madee.sga.API.ShopApi;
 import com.example.madee.sga.Admin.Shop.Adapters.ShopDataAdapter;
+import com.example.madee.sga.Dialogs;
 import com.example.madee.sga.MainActivity2;
 import com.example.madee.sga.R;
 import com.google.gson.Gson;
@@ -34,7 +33,7 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 public class Shop extends AppCompatActivity {
     private static final String TAG = MainActivity2.class.getName();
     //Declarations
-    Dialog LoaderDialog;
+    Dialogs dialogs = new Dialogs();
     Button btnAddShop;
     RecyclerView data;
     private Retrofit retrofit = new Retrofit.Builder()
@@ -78,7 +77,7 @@ public class Shop extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        Loader(0);
+        dialogs.Loader(this, 0);
         GetShops();
     }
 
@@ -94,36 +93,22 @@ public class Shop extends AppCompatActivity {
                     TypeToken<ArrayList<com.example.madee.sga.Models.Shop>> token = new TypeToken<ArrayList<com.example.madee.sga.Models.Shop>>() {
                     };
                     ArrayList<com.example.madee.sga.Models.Shop> shoplist = gson.fromJson(JData, token.getType());
-                    Loader(1);
+                    dialogs.Loader(Shop.this, 1);
                     data.setAdapter(new ShopDataAdapter(Shop.this, shoplist));
                 } catch (IOException e) {
                     e.printStackTrace();
-                    Loader(1);
+                    dialogs.Loader(Shop.this, 1);
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-
+                dialogs.Loader(Shop.this, 1);
+                dialogs.ShowErrorDialog(Shop.this);
             }
         });
 
     }
 
 
-    public void Loader(int flag) {
-        switch (flag) {
-            case 0:
-                LoaderDialog = new Dialog(Shop.this);
-                LoaderDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
-                LoaderDialog.setContentView(R.layout.wait_loader);
-                LoaderDialog.show();
-                break;
-            case 1:
-                LoaderDialog.dismiss();
-                break;
-            default:
-                LoaderDialog.dismiss();
-        }
-    }
 }
