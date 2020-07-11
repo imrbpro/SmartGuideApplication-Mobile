@@ -8,11 +8,11 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class Dialogs {
-    Dialog LoaderDialog, SuccessDialog, FailedDialog;
-    Button dbtn, dbtn1;
-    TextView txt, txtfailed;
+    public static Dialog LoaderDialog, SuccessDialog, FailedDialog;
+    public static Button dbtn, dbtn1;
+    public static TextView txt, txtfailed;
 
-    public void Loader(Context context, int flag) {
+    public static void Loader(Context context, int flag) {
         switch (flag) {
             case 0:
                 LoaderDialog = new Dialog(context);
@@ -28,7 +28,7 @@ public class Dialogs {
         }
     }
 
-    public void ShowSuccessDialog(String Message, Context context) {
+    public static void ShowSuccessDialog(String Message, Context context) {
         SuccessDialog = new Dialog(context);
         SuccessDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         SuccessDialog.setContentView(R.layout.dialog_created);
@@ -44,7 +44,7 @@ public class Dialogs {
         SuccessDialog.show();
     }
 
-    public void ShowErrorDialog(String Message, Context context) {
+    public static void ShowErrorDialog(String Message, Context context) {
         FailedDialog = new Dialog(context);
         FailedDialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
         FailedDialog.setContentView(R.layout.dialog_failed);
@@ -57,5 +57,6 @@ public class Dialogs {
                 FailedDialog.dismiss();
             }
         });
+        FailedDialog.show();
     }
 }

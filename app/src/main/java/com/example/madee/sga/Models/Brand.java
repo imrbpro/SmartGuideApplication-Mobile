@@ -1,11 +1,11 @@
 package com.example.madee.sga.Models;
 
 public class Brand {
-    private int brand_id;
-    private String brand_name;
-    private String shop_no;
-    private String brand_owner;
-    private String brand_logo;
+    public int brand_id;
+    public String brand_name;
+    public String shop_no;
+    public String brand_owner;
+    public String brand_logo;
 
 
     // Getter Methods

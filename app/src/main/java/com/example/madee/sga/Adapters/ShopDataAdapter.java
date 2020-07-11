@@ -1,4 +1,4 @@
-package com.example.madee.sga.Admin.Shop.Adapters;
+package com.example.madee.sga.Adapters;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -69,8 +69,8 @@ public class ShopDataAdapter extends RecyclerView.Adapter<ShopDataAdapter.ShopVi
         RequestOptions options = new RequestOptions()
                 .circleCrop()
                 .centerInside()
-                .placeholder(R.mipmap.ic_launcher_round)
-                .error(R.mipmap.ic_launcher_round);
+                .placeholder(R.drawable.placeholder)
+                .error(R.drawable.placeholder);
         Glide.with(shopViewHolder.img.getContext())
                 .load(url)
                 .apply(options)

@@ -10,7 +10,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.madee.sga.API.ShopApi;
-import com.example.madee.sga.Admin.Shop.Adapters.ShopDataAdapter;
+import com.example.madee.sga.Adapters.ShopDataAdapter;
 import com.example.madee.sga.Dialogs;
 import com.example.madee.sga.MainActivity2;
 import com.example.madee.sga.R;
@@ -42,7 +42,7 @@ public class Shop extends AppCompatActivity {
             .addConverterFactory(GsonConverterFactory.create())
             .build();
     private ShopApi _shopsApi;
-    private String JData = "";
+    private String JData = "", Error = "Error : Ops we are out of service", Success = "";
 
     public Shop() {
         _shopsApi = retrofit.create(ShopApi.class);
@@ -77,7 +77,7 @@ public class Shop extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        dialogs.Loader(this, 0);
+        Dialogs.Loader(this, 0);
         GetShops();
     }
 
@@ -88,23 +88,28 @@ public class Shop extends AppCompatActivity {
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 try {
                     JData = response.body().string();
-                    GsonBuilder gsonBuilder = new GsonBuilder();
-                    Gson gson = gsonBuilder.create();
-                    TypeToken<ArrayList<com.example.madee.sga.Models.Shop>> token = new TypeToken<ArrayList<com.example.madee.sga.Models.Shop>>() {
-                    };
-                    ArrayList<com.example.madee.sga.Models.Shop> shoplist = gson.fromJson(JData, token.getType());
-                    dialogs.Loader(Shop.this, 1);
-                    data.setAdapter(new ShopDataAdapter(Shop.this, shoplist));
+                    if (JData != "") {
+                        GsonBuilder gsonBuilder = new GsonBuilder();
+                        Gson gson = gsonBuilder.create();
+                        TypeToken<ArrayList<com.example.madee.sga.Models.Shop>> token = new TypeToken<ArrayList<com.example.madee.sga.Models.Shop>>() {
+                        };
+                        ArrayList<com.example.madee.sga.Models.Shop> shoplist = gson.fromJson(JData, token.getType());
+                        Dialogs.Loader(Shop.this, 1);
+                        data.setAdapter(new ShopDataAdapter(Shop.this, shoplist));
+                    } else {
+                        Dialogs.Loader(Shop.this, 1);
+                        Dialogs.ShowErrorDialog("No Shops Found", Shop.this);
+                    }
                 } catch (IOException e) {
                     e.printStackTrace();
-                    dialogs.Loader(Shop.this, 1);
+                    Dialogs.Loader(Shop.this, 1);
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                dialogs.Loader(Shop.this, 1);
-                dialogs.ShowErrorDialog(Shop.this);
+                Dialogs.Loader(Shop.this, 1);
+                Dialogs.ShowErrorDialog(Error, Shop.this);
             }
         });
 
