@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".Admin.Brand.UpdateBrand"></activity>
+        <activity android:name=".Admin.Event.Event" />
+        <activity android:name=".Admin.Event.AddNewEvent" />
+        <activity android:name=".Admin.Event.UpdateEvent" />
         <activity android:name=".Admin.Brand.Brand" />
         <activity android:name=".Admin.Shop.UpdateShop" />
         <activity android:name=".Admin.Shop.Shop" />

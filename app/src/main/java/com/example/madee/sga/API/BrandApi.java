@@ -23,7 +23,7 @@ public interface BrandApi {
     Call<ResponseBody> AddBrand(@Body String _brand);
 
     @Headers({"Content-Type: application/json"})
-    @POST("Brand/AddNew")
+    @POST("Brand/Update")
     Call<ResponseBody> UpdateBrand(@Body String _brand);
 
     @DELETE("Brand/Delete")

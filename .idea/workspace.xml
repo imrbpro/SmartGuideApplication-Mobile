@@ -12,12 +12,17 @@
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="18d82d14-9084-442a-9df6-1329f87c5f60" name="Default" comment="Code Refactored">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Adapters/BrandAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Admin/Brand/UpdateBrand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/placeholder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_update_brand.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/brandlist.xml" afterDir="false" />
+    <list default="true" id="18d82d14-9084-442a-9df6-1329f87c5f60" name="Default" comment="Admin Brand Module Completed">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/API/EventApi.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Adapters/EventAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Admin/Event/AddNewEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Admin/Event/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Admin/Event/UpdateEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Models/Event.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_new_event.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_event.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_update_event.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/eventlist.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/fileHashes/fileHashes.bin" afterDir="false" />
@@ -28,36 +33,22 @@
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/javaCompile.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.1.1/javaCompile/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/app/app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/API/BrandApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/API/BrandApi.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Admin/AdminDashboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Admin/AdminDashboard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Admin/Brand/AddNewBrand.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Admin/Brand/AddNewBrand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Admin/Brand/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Admin/Brand/Brand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Admin/Shop/Adapters/ShopDataAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Adapters/ShopDataAdapter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Admin/Shop/Shop.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Admin/Shop/Shop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Dialogs.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Dialogs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Models/Brand.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/madee/sga/Models/Brand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_new_brand.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_new_brand.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_new_shop.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_add_new_shop.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_admin_dashboard.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_admin_dashboard.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_brand.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_brand.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_shop.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_shop.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_update_shop.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_update_shop.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/dialog_failed.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/dialog_failed.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/listdatalayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/listdatalayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_update_brand.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_update_brand.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/brandlist.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/brandlist.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="ae1bd6ce" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="VisualStudio_android-23_arm_phone" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -107,11 +98,12 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/app/src/main/res/layout/brandlist.xml" />
   </component>
   <component name="PsdUISettings">
     <option name="MODULE_TAB" value="Properties" />
@@ -140,8 +132,14 @@
       <recent name="com.example.madee.sga" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Smart Guide App\Android\Smart-Guide-Application\app\src\main\res\layout" />
+      <recent name="F:\Smart Guide App\Android\Smart-Guide-Application\app\src\main\java\com\example\madee\sga\Admin\Event" />
       <recent name="F:\Smart Guide App\Android\Smart-Guide-Application\app\src\main\res\drawable" />
       <recent name="F:\Smart Guide App\Android\Smart-Guide-Application\app\src\main\res\drawable-v24" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.madee.sga.Adapters" />
+      <recent name="com.example.madee.sga.API" />
     </key>
   </component>
   <component name="RunManager">
@@ -309,7 +307,14 @@
       <option name="project" value="LOCAL" />
       <updated>1593713135602</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Admin Brand Module Completed">
+      <created>1594500141389</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1594500141389</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="UpdateCopyrightCheckinHandler">
@@ -337,7 +342,8 @@
     <MESSAGE value="ADD shop&#10;UPDATE shop&#10;DELETE shop&#10;PUT shop &#10;added in Mainactivity 2" />
     <MESSAGE value="Admin Shop Module Completed" />
     <MESSAGE value="Code Refactored" />
-    <option name="LAST_COMMIT_MESSAGE" value="Code Refactored" />
+    <MESSAGE value="Admin Brand Module Completed" />
+    <option name="LAST_COMMIT_MESSAGE" value="Admin Brand Module Completed" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -347,6 +353,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="199" y="105" key="#PSD/0.0.1366.768@0.0.1366.768" timestamp="1593526584122" />
+    <state x="413" y="138" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1594645142413">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="413" y="138" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.1366.768@0.0.1366.768" timestamp="1594645142413" />
     <state x="488" y="80" key="#com.intellij.ide.util.MemberChooser" timestamp="1594066560648">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -365,60 +375,69 @@
     </state>
     <state x="263" y="123" key="AndroidCreateResourceFileDialog/0.0.1366.738@0.0.1366.738" timestamp="1593009285921" />
     <state x="263" y="128" key="AndroidCreateResourceFileDialog/0.0.1366.768@0.0.1366.768" timestamp="1593792477573" />
-    <state x="256" y="0" key="CommitChangelistDialog2" timestamp="1593713127948">
+    <state x="256" y="0" key="CommitChangelistDialog2" timestamp="1594500129517">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="256" y="0" key="CommitChangelistDialog2/0.0.1366.738@0.0.1366.738" timestamp="1593439327078" />
-    <state x="256" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1593713127948" />
-    <state width="420" height="438" key="DebuggerActiveHint" timestamp="1593208951166">
-      <screen x="0" y="0" width="1366" height="738" />
+    <state x="256" y="0" key="CommitChangelistDialog2/0.0.1366.768@0.0.1366.768" timestamp="1594500129517" />
+    <state width="425" height="456" key="DebuggerActiveHint" timestamp="1594746269730">
+      <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="420" height="438" key="DebuggerActiveHint/0.0.1366.738@0.0.1366.738" timestamp="1593208951166" />
-    <state width="1323" height="190" key="GridCell.Tab.0.bottom" timestamp="1594499033626">
+    <state width="425" height="456" key="DebuggerActiveHint/0.0.1366.768@0.0.1366.768" timestamp="1594746269730" />
+    <state x="92" y="92" width="1182" height="584" key="DiffContextDialog" timestamp="1594638197925">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="92" y="92" width="1182" height="584" key="DiffContextDialog/0.0.1366.768@0.0.1366.768" timestamp="1594638197925" />
+    <state x="463" y="138" key="FileChooserDialogImpl" timestamp="1594573269432">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="463" y="138" key="FileChooserDialogImpl/0.0.1366.768@0.0.1366.768" timestamp="1594573269432" />
+    <state width="1323" height="254" key="GridCell.Tab.0.bottom" timestamp="1594746171737">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1318" height="229" key="GridCell.Tab.0.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593437634460" />
-    <state width="1323" height="190" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1594499033626" />
-    <state width="1323" height="190" key="GridCell.Tab.0.center" timestamp="1594499033626">
+    <state width="1323" height="254" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1594746171737" />
+    <state width="1323" height="254" key="GridCell.Tab.0.center" timestamp="1594746171737">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1318" height="229" key="GridCell.Tab.0.center/0.0.1366.738@0.0.1366.738" timestamp="1593437634459" />
-    <state width="1323" height="190" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1594499033626" />
-    <state width="1323" height="190" key="GridCell.Tab.0.left" timestamp="1594499033625">
+    <state width="1323" height="254" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1594746171737" />
+    <state width="1323" height="254" key="GridCell.Tab.0.left" timestamp="1594746171736">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1318" height="229" key="GridCell.Tab.0.left/0.0.1366.738@0.0.1366.738" timestamp="1593437634458" />
-    <state width="1323" height="190" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1594499033625" />
-    <state width="1323" height="190" key="GridCell.Tab.0.right" timestamp="1594499033626">
+    <state width="1323" height="254" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1594746171736" />
+    <state width="1323" height="254" key="GridCell.Tab.0.right" timestamp="1594746171737">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1318" height="229" key="GridCell.Tab.0.right/0.0.1366.738@0.0.1366.738" timestamp="1593437634459" />
-    <state width="1323" height="190" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1594499033626" />
-    <state width="1323" height="254" key="GridCell.Tab.1.bottom" timestamp="1594498963171">
+    <state width="1323" height="254" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1594746171737" />
+    <state width="1323" height="254" key="GridCell.Tab.1.bottom" timestamp="1594746199976">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1318" height="229" key="GridCell.Tab.1.bottom/0.0.1366.738@0.0.1366.738" timestamp="1593437634460" />
-    <state width="1323" height="254" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1594498963171" />
-    <state width="1323" height="254" key="GridCell.Tab.1.center" timestamp="1594498963171">
+    <state width="1323" height="254" key="GridCell.Tab.1.bottom/0.0.1366.768@0.0.1366.768" timestamp="1594746199976" />
+    <state width="1323" height="254" key="GridCell.Tab.1.center" timestamp="1594746199976">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1318" height="229" key="GridCell.Tab.1.center/0.0.1366.738@0.0.1366.738" timestamp="1593437634460" />
-    <state width="1323" height="254" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1594498963171" />
-    <state width="1323" height="254" key="GridCell.Tab.1.left" timestamp="1594498963170">
+    <state width="1323" height="254" key="GridCell.Tab.1.center/0.0.1366.768@0.0.1366.768" timestamp="1594746199976" />
+    <state width="1323" height="254" key="GridCell.Tab.1.left" timestamp="1594746199976">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1318" height="229" key="GridCell.Tab.1.left/0.0.1366.738@0.0.1366.738" timestamp="1593437634460" />
-    <state width="1323" height="254" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1594498963170" />
-    <state width="1323" height="254" key="GridCell.Tab.1.right" timestamp="1594498963171">
+    <state width="1323" height="254" key="GridCell.Tab.1.left/0.0.1366.768@0.0.1366.768" timestamp="1594746199976" />
+    <state width="1323" height="254" key="GridCell.Tab.1.right" timestamp="1594746199976">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state width="1318" height="229" key="GridCell.Tab.1.right/0.0.1366.738@0.0.1366.738" timestamp="1593437634460" />
-    <state width="1323" height="254" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1594498963171" />
-    <state x="274" y="110" key="Vcs.Push.Dialog.v2" timestamp="1593713139876">
+    <state width="1323" height="254" key="GridCell.Tab.1.right/0.0.1366.768@0.0.1366.768" timestamp="1594746199976" />
+    <state x="274" y="110" key="Vcs.Push.Dialog.v2" timestamp="1594500146156">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="274" y="106" key="Vcs.Push.Dialog.v2/0.0.1366.738@0.0.1366.738" timestamp="1593439385931" />
-    <state x="274" y="110" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1593713139876" />
+    <state x="274" y="110" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1594500146156" />
     <state width="691" height="377" key="XDebugger.FullValuePopup" timestamp="1593015960223">
       <screen x="0" y="0" width="1366" height="738" />
     </state>
@@ -431,11 +450,11 @@
       <screen x="0" y="0" width="1366" height="738" />
     </state>
     <state x="470" y="49" width="607" height="674" key="find.popup/0.0.1366.738@0.0.1366.738" timestamp="1593275106271" />
-    <state x="339" y="172" key="run.anything.popup" timestamp="1594499275186">
+    <state x="339" y="172" key="run.anything.popup" timestamp="1594645643008">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="339" y="165" key="run.anything.popup/0.0.1366.738@0.0.1366.738" timestamp="1592936473652" />
-    <state x="339" y="172" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1594499275186" />
+    <state x="339" y="172" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1594645643008" />
     <state x="346" y="61" width="672" height="706" key="search.everywhere.popup" timestamp="1593776197457">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

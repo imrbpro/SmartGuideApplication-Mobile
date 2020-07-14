@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.madee.sga.Admin.Brand.Brand;
+import com.example.madee.sga.Admin.Event.Event;
 import com.example.madee.sga.Admin.Shop.Shop;
 import com.example.madee.sga.R;
 
@@ -33,6 +34,15 @@ public class AdminDashboard extends AppCompatActivity {
             public void onClick(View view) {
                 Intent GotoBrand = new Intent(AdminDashboard.this, Brand.class);
                 startActivity(GotoBrand);
+            }
+        });
+
+        btnEvent = findViewById(R.id.btnEvent);
+        btnEvent.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent GotoEvent = new Intent(AdminDashboard.this, Event.class);
+                startActivity(GotoEvent);
             }
         });
 
